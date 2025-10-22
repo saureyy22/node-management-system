@@ -21,7 +21,7 @@ const nodeSchema = new mongoose.Schema({
     default: 'pending' 
   }
 }, {
-  timestamps: true // Adds createdAt and updatedAt
+  timestamps: true
 });
 
 module.exports = mongoose.model('Node', nodeSchema);
