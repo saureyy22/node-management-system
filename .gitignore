@@ -1,3 +1,6 @@
 node_modules/
 
 **/node_modules/
+
+/cms-server/temp_uploads/
+/node-app/uploads/

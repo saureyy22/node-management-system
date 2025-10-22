@@ -1,0 +1,32 @@
+{
+  "name": "management-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start:cms": "cd cms-server && npm start",
+    "start:ui": "cd ui-frontend && npm run dev",
+
+    "start:node:a": "cd node-app && cross-env PORT=3001 NODE_ID=Node-A npm start",
+    "start:node:b": "cd node-app && cross-env PORT=3002 NODE_ID=Node-B npm start",
+    "start:node:c": "cd node-app && cross-env PORT=3003 NODE_ID=Node-C npm start",
+
+    "start:nodes": "concurrently \"npm:start:node:a\" \"npm:start:node:b\" \"npm:start:node:c\"",
+    
+    "dev": "concurrently \"npm:start:cms\" \"npm:start:ui\" \"npm:start:nodes\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saureyy22/node-management-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "homepage": "https://github.com/saureyy22/node-management-system#readme",
+  "dependencies": {
+    "concurrently": "^9.2.1",
+    "cross-env": "^10.1.0"
+  }
+}
