@@ -57,6 +57,7 @@ app.post('/register', async (req, res) => {
       { address, status: 'connected', lastUploadStatus: 'pending' },
       { upsert: true, new: true }
     );
+    console.log(`Node registered/updated: ${node.nodeId}`);
     notifyClients();
     res.status(200).json(node);
   } catch (err) {
